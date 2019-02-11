@@ -109,3 +109,31 @@ Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 149.142.201.3 at 2019-02-11 23:10:19 +0000
 Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/articles/new" for 149.142.201.3 at 2019-02-11 23:10:20 +0000
+Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (20.7ms)
+  Rendered articles/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 49ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/articles" for 149.142.201.3 at 2019-02-11 23:10:23 +0000
+Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dDvQ6mNHqNI8LHBMQH/GpdyDMFU/15rjBOqs3/GWTse81ucnzXDS3aMlJuTxq6EBXl63Y2IQCW5zyBEvh5TMVg==", "article"=>{"title"=>"Test", "body"=>"ttt"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Test"], ["body", "ttt"], ["created_at", "2019-02-11 23:10:23.973037"], ["updated_at", "2019-02-11 23:10:23.973037"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.16.205:48331/articles/1
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/1" for 149.142.201.3 at 2019-02-11 23:10:24 +0000
+Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 20.2ms | ActiveRecord: 0.3ms)
